@@ -32,21 +32,21 @@ for(int b = 0; b <= n; b++)
 	c[b] = 2147483647;
 	}
 
-// Compute extras[i; j]  for 1 <= i <= j <= n.
+// Compute extras[i; j] for 1 <= i <= j <= n.
 for(int k = 1; k <= n; k++)
 	{
 	extras[k][k] = M - l[k].length();
 	for(int j = k + 1; j <= n; j++)
 		{
-			extras[k][j] = extras[k][j-1]- l[j].length() - 1;
+			extras[k][j] = extras[k][j-1]ï¿½- l[j].length() - 1;
 		}
 	}
-// Compute lc[i][j]  for 1 <= i <= j <= n
+// Compute lc[i][j] for 1 <= i <= j <= n
 for(int i = 1; i <= n; i++)
 	{
 	for(int j = i; j <= n; j++)
 		{
-		if(extras[i][j] < 0)
+		if(extras[i][j] < 0)
 			{
 			lc[i][j] = 1;
 			}
@@ -64,15 +64,15 @@ for(int i = 1; i <= n; i++)
 		}
 	}
 // Compute c[j] and p[j] for 1 <= j <= n
-c[0]= 0;
+c[0] = 0;
 for(int d = 0; d < n; d++)
 {
 	c[d] = 32767;
 	for(int e = 0; e < d; e++)
 	{
-		if c[e-1] + lc[e][d]  < c[d])
-		{
-			c[d] = c[e - 1]+ lc[e][d]; 
+		if c[e-1] + lc[e][d] < c[d])
+		{
+			c[d] = c[e - 1] + lc[e][d];
 			p[d] = e;
 		}
 	}
